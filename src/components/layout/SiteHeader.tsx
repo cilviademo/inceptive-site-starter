@@ -12,20 +12,14 @@ export default function SiteHeader() {
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">DrumHaus</span>
         </Link>
         <nav className="hidden md:flex items-center gap-1">
-          <NavLink to="/kits" className={navLinkClass}>Kits</NavLink>
+          <NavLink to="/kits" className={navLinkClass}>Shop</NavLink>
           <NavLink to="/beats" className={navLinkClass}>Beats</NavLink>
-          <NavLink to="/bundles" className={navLinkClass}>Bundles</NavLink>
-          <NavLink to="/blog" className={navLinkClass}>Blog</NavLink>
-          <NavLink to="/license" className={navLinkClass}>License</NavLink>
           <NavLink to="/about" className={navLinkClass}>About</NavLink>
-          <NavLink to="/support" className={navLinkClass}>Support</NavLink>
+          <NavLink to="/support" className={navLinkClass}>Contact</NavLink>
         </nav>
         <div className="flex items-center gap-2">
           <Button variant="ghost" asChild>
             <Link to="/cart">Cart</Link>
-          </Button>
-          <Button variant="hero" asChild>
-            <Link to="/beats">Open Beat Store</Link>
           </Button>
         </div>
       </div>

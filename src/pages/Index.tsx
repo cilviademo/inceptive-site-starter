@@ -25,7 +25,7 @@ const Index = () => {
             <h2 className="text-2xl font-semibold">New Drops</h2>
             <a href="/kits" className="text-sm text-muted-foreground hover:text-foreground">View all</a>
           </header>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {newDrops.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
@@ -37,7 +37,7 @@ const Index = () => {
             <h2 className="text-2xl font-semibold">Latest Kits</h2>
             <a href="/kits" className="text-sm text-muted-foreground hover:text-foreground">Browse Kits</a>
           </header>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {kits.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}
