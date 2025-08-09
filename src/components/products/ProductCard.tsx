@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
-import { PlayCircle } from "lucide-react";
+import { Heart, PlayCircle } from "lucide-react";
 import type { Product } from "@/data/products";
-
+import { useWishlist } from "@/hooks/useWishlist";
+import { usePlayer } from "@/context/PlayerContext";
+import { track } from "@/lib/analytics";
 export default function ProductCard({ product }: { product: Product }) {
   const price = `$${(product.price / 100).toFixed(2)}`;
   const compare = product.compareAtPrice ? `$${(product.compareAtPrice / 100).toFixed(2)}` : undefined;

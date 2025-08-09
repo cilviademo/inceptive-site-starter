@@ -18,7 +18,11 @@ import Support from "./pages/Support";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Account from "./pages/Account";
-
+import { PlayerProvider } from "@/context/PlayerContext";
+import MiniPlayer from "@/components/player/MiniPlayer";
+import GlobalSearch from "@/components/search/GlobalSearch";
+import ExitIntent from "@/components/marketing/ExitIntent";
+import AppLifecycle from "@/components/system/AppLifecycle";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -26,26 +30,32 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <SiteHeader />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/kits" element={<Kits />} />
-          <Route path="/beats" element={<Beats />} />
-          <Route path="/bundles" element={<Bundles />} />
-          <Route path="/product/:slug" element={<ProductDetail />} />
-          <Route path="/license" element={<License />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/support" element={<Support />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/account" element={<Account />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <SiteFooter />
-      </BrowserRouter>
+      <PlayerProvider>
+        <BrowserRouter>
+          <AppLifecycle />
+          <GlobalSearch />
+          <ExitIntent />
+          <SiteHeader />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/kits" element={<Kits />} />
+            <Route path="/beats" element={<Beats />} />
+            <Route path="/bundles" element={<Bundles />} />
+            <Route path="/product/:slug" element={<ProductDetail />} />
+            <Route path="/license" element={<License />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/account" element={<Account />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <SiteFooter />
+          <MiniPlayer />
+        </BrowserRouter>
+      </PlayerProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

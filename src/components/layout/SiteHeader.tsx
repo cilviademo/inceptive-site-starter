@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-
+import { Search } from "lucide-react";
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `story-link px-3 py-2 rounded-md transition-colors ${isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`;
 
@@ -18,6 +18,14 @@ export default function SiteHeader() {
           <NavLink to="/support" className={navLinkClass}>Contact</NavLink>
         </nav>
         <div className="flex items-center gap-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label="Search"
+            onClick={() => window.dispatchEvent(new Event("drumhaus:open-search"))}
+          >
+            <Search className="h-5 w-5" />
+          </Button>
           <Button variant="ghost" asChild>
             <Link to="/cart">Cart</Link>
           </Button>
