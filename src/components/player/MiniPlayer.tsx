@@ -12,7 +12,7 @@ export default function MiniPlayer() {
         <div className="min-w-0 flex-1">
           <p className="truncate text-sm font-medium">{current.title}</p>
           <div aria-hidden className="h-1 w-full bg-muted rounded">
-            <div className="h-1 w-1/3 bg-primary rounded" />
+            <div className="h-1 w-1/3 bg-gradient-primary rounded" />
           </div>
         </div>
         <div className="flex items-center gap-2">

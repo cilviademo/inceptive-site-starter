@@ -8,33 +8,33 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
-    --foreground: 0 0% 98%;
+    --background: 210 33% 9%;
+    --foreground: 0 0% 96%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 98%;
+    --card: 220 16% 13%;
+    --card-foreground: 0 0% 96%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 220 16% 13%;
+    --popover-foreground: 0 0% 96%;
 
-    --primary: 24 95% 53%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 206 100% 40%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 98%;
 
     --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 65%;
+    --muted-foreground: 0 0% 66%;
 
-    --accent: 28 94% 58%;
-    --accent-foreground: 0 0% 0%;
+    --accent: 195 100% 44%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 16%;
-    --input: 0 0% 16%;
-    --ring: 24 95% 53%;
+    --border: 215 15% 20%;
+    --input: 215 15% 20%;
+    --ring: 206 100% 40%;
 
     --radius: 0.5rem;
 
@@ -104,22 +104,25 @@ All colors MUST be HSL.
 /* Extended design system and utilities */
 @layer base {
   :root {
-    --primary-variant: 28 94% 58%;
-    --accent-variant: 32 100% 62%;
+    --primary-variant: 195 100% 44%;
+    --accent-variant: 196 100% 44%;
+    --brand-orange: 17 100% 63%;
+    --brand-yellow: 48 100% 50%;
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-variant)) 60%);
     --gradient-cta: linear-gradient(135deg, hsl(var(--primary-variant)), hsl(var(--accent-variant)));
     --shadow-elegant: 0 12px 30px -12px hsl(var(--primary) / 0.25);
     --shadow-glow: 0 10px 40px -10px hsl(var(--accent-variant) / 0.35);
   }
   .dark {
-    --primary-variant: 28 94% 60%;
-    --accent-variant: 32 100% 65%;
+    --primary-variant: 195 100% 46%;
+    --accent-variant: 196 100% 48%;
   }
 }
 
 @layer utilities {
   .shadow-elegant { box-shadow: var(--shadow-elegant); }
   .shadow-glow { box-shadow: var(--shadow-glow); }
+  .bg-gradient-primary { background-image: var(--gradient-primary); }
 
   @keyframes marquee {
     0% { transform: translateX(0); }
