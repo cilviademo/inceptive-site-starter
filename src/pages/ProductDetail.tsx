@@ -1,7 +1,11 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import { getProductBySlug, products } from "@/data/products";
 import ProductCard from "@/components/products/ProductCard";
 import { useSEO } from "@/hooks/useSEO";
+import { useCart } from "@/hooks/useCart";
+import { Button } from "@/components/ui/button";
+import { ShieldCheck, Lock, Star } from "lucide-react";
 
 export default function ProductDetail() {
   const { slug } = useParams();
@@ -17,7 +21,11 @@ export default function ProductDetail() {
   if (!product) return <main className="container py-10"><p>Product not found.</p></main>;
 
   const related = products.filter((p) => product.crossSell?.includes(p.slug));
-  const price = `$${(product.price / 100).toFixed(2)}`;
+  const { add } = useCart();
+  const [tier, setTier] = useState<"standard" | "premium" | "exclusive">("standard");
+  const base = product.price;
+  const multiplier = tier === "standard" ? 1 : tier === "premium" ? 1.5 : 3;
+  const display = `$${((base * multiplier) / 100).toFixed(2)}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -72,8 +80,8 @@ export default function ProductDetail() {
         </div>
         <div>
           <h1 className="text-3xl font-bold">{product.title}</h1>
+          <PdpPriceAndLicenses product={product} />
           <p className="text-muted-foreground mt-2 whitespace-pre-line">{product.descriptionMD}</p>
-          <div className="mt-4 text-2xl font-semibold">{price}</div>
           <div className="mt-6">
             <h3 className="font-semibold mb-2">Contents</h3>
             <ul className="space-y-1 text-sm">

@@ -27,6 +27,7 @@ import MiniPlayer from "@/components/player/MiniPlayer";
 import GlobalSearch from "@/components/search/GlobalSearch";
 import ExitIntent from "@/components/marketing/ExitIntent";
 import AppLifecycle from "@/components/system/AppLifecycle";
+import LiveSales from "@/components/marketing/LiveSales";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -39,6 +40,7 @@ const App = () => (
           <AppLifecycle />
           <GlobalSearch />
           <ExitIntent />
+          <LiveSales />
           <SiteHeader />
           <Routes>
             <Route path="/" element={<Index />} />
