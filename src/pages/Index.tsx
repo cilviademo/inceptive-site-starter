@@ -2,6 +2,7 @@ import { useSEO } from "@/hooks/useSEO";
 import Hero from "@/components/home/Hero";
 import BrandMarquee from "@/components/common/BrandMarquee";
 import ProductCard from "@/components/products/ProductCard";
+import FunnelGate from "@/components/funnel/FunnelGate";
 import { products, getProductsByType } from "@/data/products";
 
 const Index = () => {
@@ -16,6 +17,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <FunnelGate />
       <Hero />
       <BrandMarquee />
 
