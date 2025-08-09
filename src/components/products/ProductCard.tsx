@@ -7,7 +7,7 @@ export default function ProductCard({ product }: { product: Product }) {
   const compare = product.compareAtPrice ? `$${(product.compareAtPrice / 100).toFixed(2)}` : undefined;
 
   return (
-    <article className="group relative rounded-xl border bg-card hover:shadow-glow transition-shadow">
+    <article className="group relative rounded-xl border bg-card hover:shadow-glow transition-shadow animate-fade-in">
       <Link to={`/product/${product.slug}`} className="relative block overflow-hidden rounded-t-xl border-b">
         <img
           src={product.coverArt}
