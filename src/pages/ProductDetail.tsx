@@ -80,7 +80,20 @@ export default function ProductDetail() {
         </div>
         <div>
           <h1 className="text-3xl font-bold">{product.title}</h1>
-          <PdpPriceAndLicenses product={product} />
+          <div className="mt-4 space-y-3">
+            <div className="inline-flex rounded-md border p-1">
+              <button type="button" onClick={() => setTier("standard")} className={`px-3 py-1.5 text-sm rounded-md ${tier === "standard" ? "bg-primary text-primary-foreground" : "text-foreground hover:bg-muted"}`}>Standard</button>
+              <button type="button" onClick={() => setTier("premium")} className={`px-3 py-1.5 text-sm rounded-md ${tier === "premium" ? "bg-primary text-primary-foreground" : "text-foreground hover:bg-muted"}`}>Premium</button>
+              <button type="button" onClick={() => setTier("exclusive")} className={`px-3 py-1.5 text-sm rounded-md ${tier === "exclusive" ? "bg-primary text-primary-foreground" : "text-foreground hover:bg-muted"}`}>Exclusive</button>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-2xl font-semibold">{display}</span>
+              <Button onClick={() => add(product, 1, { tier })}>Add to Cart</Button>
+            </div>
+            <p className="flex items-center gap-2 text-xs text-muted-foreground">
+              <ShieldCheck className="h-4 w-4" /> Secure checkout
+            </p>
+          </div>
           <p className="text-muted-foreground mt-2 whitespace-pre-line">{product.descriptionMD}</p>
           <div className="mt-6">
             <h3 className="font-semibold mb-2">Contents</h3>

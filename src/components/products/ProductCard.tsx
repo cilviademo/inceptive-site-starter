@@ -5,6 +5,7 @@ import type { Product } from "@/data/products";
 import { useWishlist } from "@/hooks/useWishlist";
 import { useCart } from "@/hooks/useCart";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 export default function ProductCard({ product }: { product: Product }) {
   const price = `$${(product.price / 100).toFixed(2)}`;
@@ -43,6 +44,9 @@ export default function ProductCard({ product }: { product: Product }) {
         <Heart className={`h-4 w-4 ${has(product.id) ? "text-primary" : "text-muted-foreground"}`} />
       </button>
       <Link to={`/product/${product.slug}`} className="relative block overflow-hidden rounded-t-xl border-b" onMouseEnter={onEnter} onMouseLeave={onLeave}>
+        <div className="absolute left-3 top-3 z-10">
+          <Badge variant="secondary">Available</Badge>
+        </div>
         <img
           src={product.coverArt}
           alt={`${product.title} cover art`}

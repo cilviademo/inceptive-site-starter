@@ -12,13 +12,10 @@ export default function SiteHeader() {
         <Link to="/" className="font-display font-bold text-xl tracking-tight">
           <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Inceptive by Marc Antione</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-1">
-          <NavLink to="/kits" className={navLinkClass}>Shop</NavLink>
-          <NavLink to="/kits/free" className={navLinkClass}>Free</NavLink>
-          <NavLink to="/genre/trap" className={navLinkClass}>Genres</NavLink>
+        <nav className="hidden md:flex items-center gap-2 font-display tracking-tight">
+          <NavLink to="/kits" className={navLinkClass}>Kits</NavLink>
           <NavLink to="/beats" className={navLinkClass}>Beats</NavLink>
           <NavLink to="/about" className={navLinkClass}>About</NavLink>
-          <NavLink to="/support" className={navLinkClass}>Contact</NavLink>
         </nav>
         <div className="flex items-center gap-2">
           <Button

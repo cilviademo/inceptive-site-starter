@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="relative z-10 grid md:grid-cols-2 gap-8 p-8 md:p-12">
         <div className="flex flex-col justify-center">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-            Curated Drum Kits & Beats
+            Where beats speak louder than words
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
             Vintage breaks, modern one-shots, exclusive loops. Level up your sound with industry-grade packs.
