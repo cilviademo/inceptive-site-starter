@@ -11,6 +11,10 @@ import Kits from "./pages/Kits";
 import Beats from "./pages/Beats";
 import Bundles from "./pages/Bundles";
 import ProductDetail from "./pages/ProductDetail";
+import KitsFree from "./pages/KitsFree";
+import Genre from "./pages/Genre";
+import Playbook from "./pages/Playbook";
+import BlogHowToMix808s from "./pages/BlogHowToMix808s";
 import License from "./pages/License";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
@@ -41,6 +45,10 @@ const App = () => (
             <Route path="/kits" element={<Kits />} />
             <Route path="/beats" element={<Beats />} />
             <Route path="/bundles" element={<Bundles />} />
+            <Route path="/kits/free" element={<KitsFree />} />
+            <Route path="/genre/:slug" element={<Genre />} />
+            <Route path="/playbook" element={<Playbook />} />
+            <Route path="/blog/how-to-mix-808s" element={<BlogHowToMix808s />} />
             <Route path="/product/:slug" element={<ProductDetail />} />
             <Route path="/license" element={<License />} />
             <Route path="/about" element={<About />} />

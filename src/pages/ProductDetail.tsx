@@ -31,11 +31,36 @@ export default function ProductDetail() {
       price: (product.price / 100).toFixed(2),
       availability: "https://schema.org/InStock",
     },
+    ...(product.rating && product.ratingCount ? {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: product.rating,
+        reviewCount: product.ratingCount,
+      }
+    } : {}),
+  } as const;
+
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Are these packs royalty-free?",
+        acceptedAnswer: { "@type": "Answer", text: "Yes. For major label placements/broadcast, master clearance may be required." }
+      },
+      {
+        "@type": "Question",
+        name: "Which DAWs are supported?",
+        acceptedAnswer: { "@type": "Answer", text: "All WAV one-shots/loops work in any DAW (FL, Ableton, Logic, Pro Tools, Studio One)." }
+      }
+    ]
   };
 
   return (
     <main className="container py-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <div className="grid md:grid-cols-2 gap-8">
         <div className="rounded-xl overflow-hidden border">
           <img src={product.coverArt} alt={`${product.title} cover art`} className="w-full object-cover" />

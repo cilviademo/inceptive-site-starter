@@ -14,6 +14,8 @@ export default function SiteHeader() {
         </Link>
         <nav className="hidden md:flex items-center gap-1">
           <NavLink to="/kits" className={navLinkClass}>Shop</NavLink>
+          <NavLink to="/kits/free" className={navLinkClass}>Free</NavLink>
+          <NavLink to="/genre/trap" className={navLinkClass}>Genres</NavLink>
           <NavLink to="/beats" className={navLinkClass}>Beats</NavLink>
           <NavLink to="/about" className={navLinkClass}>About</NavLink>
           <NavLink to="/support" className={navLinkClass}>Contact</NavLink>
