@@ -7,7 +7,7 @@ import { products, getProductsByType } from "@/data/products";
 
 const Index = () => {
   useSEO({
-    title: "DrumHaus — Pro Drum Kits & Beat Store",
+    title: "Inceptive by Marc Antione — Pro Drum Kits & Beat Store",
     description: "Curated drum kits, loops, and a native beat store inspired by HHS and WavSupply.",
     canonical: window.location.origin + "/",
   });

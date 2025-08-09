@@ -3,7 +3,7 @@ import { getProductsByType } from "@/data/products";
 import { useSEO } from "@/hooks/useSEO";
 
 export default function Beats() {
-  useSEO({ title: "Beats — DrumHaus", description: "Native playlist and BeatStars Blaze Player embed." });
+  useSEO({ title: "Beats — Inceptive by Marc Antione", description: "Native playlist and BeatStars Blaze Player embed." });
   const beats = getProductsByType("beat");
   return (
     <main className="container py-10 space-y-8">

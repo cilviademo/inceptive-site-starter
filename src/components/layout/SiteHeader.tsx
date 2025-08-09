@@ -8,8 +8,8 @@ export default function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="font-bold text-lg tracking-tight">
-          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">DrumHaus</span>
+        <Link to="/" className="font-display font-bold text-xl tracking-tight">
+          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Inceptive by Marc Antione</span>
         </Link>
         <nav className="hidden md:flex items-center gap-1">
           <NavLink to="/kits" className={navLinkClass}>Shop</NavLink>

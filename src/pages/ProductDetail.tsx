@@ -8,7 +8,7 @@ export default function ProductDetail() {
   const product = getProductBySlug(slug || "");
 
   useSEO({
-    title: product ? `${product.title} — DrumHaus` : "Product — DrumHaus",
+    title: product ? `${product.title} — Inceptive by Marc Antione` : "Product — Inceptive by Marc Antione",
     description: product?.descriptionMD.slice(0, 150),
     canonical: window.location.href,
     image: product?.coverArt,

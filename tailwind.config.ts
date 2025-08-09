@@ -102,7 +102,8 @@ export default {
 					'Apple Color Emoji',
 					'Segoe UI Emoji',
 					'Noto Color Emoji'
-				]
+				],
+				display: ['Playfair Display', 'serif']
 			}
 		}
 	},

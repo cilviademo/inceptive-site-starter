@@ -4,7 +4,7 @@ import { getProductsByType } from "@/data/products";
 import { useSEO } from "@/hooks/useSEO";
 
 export default function Kits() {
-  useSEO({ title: "Kits — DrumHaus", description: "Drum kits, one-shots, loops with filters and sorting." });
+  useSEO({ title: "Kits — Inceptive by Marc Antione", description: "Drum kits, one-shots, loops with filters and sorting." });
 
   const all = getProductsByType("kit");
   const [query, setQuery] = useState("");
@@ -28,9 +28,10 @@ export default function Kits() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search kits..."
+          aria-label="Search kits"
           className="h-10 px-4 rounded-md border bg-background"
         />
-        <select value={sort} onChange={(e) => setSort(e.target.value)} className="h-10 px-3 rounded-md border bg-background">
+        <select value={sort} onChange={(e) => setSort(e.target.value)} aria-label="Sort kits" className="h-10 px-3 rounded-md border bg-background">
           <option value="new">Newest</option>
           <option value="price-asc">Price: Low to High</option>
           <option value="price-desc">Price: High to Low</option>

@@ -1,7 +1,7 @@
 import { useSEO } from "@/hooks/useSEO";
 
 export default function About() {
-  useSEO({ title: "About — DrumHaus", description: "Our mission and ethos." });
+  useSEO({ title: "About — Inceptive by Marc Antione", description: "Our mission and ethos." });
   return (
     <main className="container py-10">
       <h1 className="text-3xl font-bold">About</h1>

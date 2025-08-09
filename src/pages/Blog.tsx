@@ -1,7 +1,7 @@
 import { useSEO } from "@/hooks/useSEO";
 
 export default function Blog() {
-  useSEO({ title: "Blog — DrumHaus", description: "Drops, placements, and tips." });
+  useSEO({ title: "Blog — Inceptive by Marc Antione", description: "Drops, placements, and tips." });
   return (
     <main className="container py-10">
       <h1 className="text-3xl font-bold">Blog</h1>

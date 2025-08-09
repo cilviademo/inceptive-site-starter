@@ -1,7 +1,7 @@
 import { useSEO } from "@/hooks/useSEO";
 
 export default function License() {
-  useSEO({ title: "License — DrumHaus", description: "Clear terms for kits and beats." });
+  useSEO({ title: "License — Inceptive by Marc Antione", description: "Clear terms for kits and beats." });
   return (
     <main className="container py-10 prose prose-zinc max-w-none">
       <h1>License</h1>

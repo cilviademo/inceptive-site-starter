@@ -1,7 +1,7 @@
 import { useSEO } from "@/hooks/useSEO";
 
 export default function Support() {
-  useSEO({ title: "Support — DrumHaus", description: "Get help with orders and licensing." });
+  useSEO({ title: "Support — Inceptive by Marc Antione", description: "Get help with orders and licensing." });
   return (
     <main className="container py-10">
       <h1 className="text-3xl font-bold">Support</h1>

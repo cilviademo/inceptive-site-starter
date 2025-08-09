@@ -3,7 +3,7 @@ import { getProductsByType } from "@/data/products";
 import { useSEO } from "@/hooks/useSEO";
 
 export default function Bundles() {
-  useSEO({ title: "Bundles — DrumHaus", description: "Curated bundles for instant savings." });
+  useSEO({ title: "Bundles — Inceptive by Marc Antione", description: "Curated bundles for instant savings." });
   const bundles = getProductsByType("bundle");
   return (
     <main className="container py-10">
