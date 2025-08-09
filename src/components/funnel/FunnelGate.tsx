@@ -17,6 +17,12 @@ export default function FunnelGate() {
   useEffect(() => {
     const done = localStorage.getItem(FUNNEL_DONE_KEY) === "true";
     if (!done) setOpen(true);
+    const openHandler = () => {
+      setStep("form");
+      setOpen(true);
+    };
+    window.addEventListener("open-funnel", openHandler);
+    return () => window.removeEventListener("open-funnel", openHandler);
   }, []);
 
   if (!open) return null;

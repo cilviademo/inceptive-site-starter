@@ -20,6 +20,9 @@ export default function Hero() {
             <Button variant="outline" size="lg" asChild>
               <a href="/beats">Open Beat Store</a>
             </Button>
+            <Button variant="secondary" size="lg" onClick={() => window.dispatchEvent(new Event("open-funnel"))}>
+              Get Free Mini Kit
+            </Button>
           </div>
         </div>
         <div className="rounded-2xl overflow-hidden border shadow-elegant">

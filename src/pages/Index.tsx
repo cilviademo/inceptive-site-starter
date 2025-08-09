@@ -3,6 +3,7 @@ import Hero from "@/components/home/Hero";
 import BrandMarquee from "@/components/common/BrandMarquee";
 import ProductCard from "@/components/products/ProductCard";
 import FunnelGate from "@/components/funnel/FunnelGate";
+import BeatStarsEmbed from "@/components/embeds/BeatStarsEmbed";
 import { products, getProductsByType } from "@/data/products";
 
 const Index = () => {
@@ -14,6 +15,9 @@ const Index = () => {
 
   const newDrops = products.slice(0, 4);
   const kits = getProductsByType("kit");
+  const beatstarsId = (typeof window !== "undefined" && localStorage.getItem("integrations.beatstars_id")) || "";
+  const gumroadUrl = (typeof window !== "undefined" && localStorage.getItem("integrations.gumroad_url")) || "";
+  const shopifyEmbed = (typeof window !== "undefined" && localStorage.getItem("integrations.shopify_embed")) || "";
 
   return (
     <div className="min-h-screen">
@@ -51,15 +55,17 @@ const Index = () => {
             <h2 className="text-2xl font-semibold">Beat Store</h2>
             <p className="text-muted-foreground text-sm">Embed your BeatStars Blaze Player or use the native player.</p>
           </header>
-          <div className="rounded-xl border overflow-hidden">
-            <iframe
-              src="https://player.beatstars.com/?storeId=YOUR_ID"
-              width="100%"
-              height={650}
-              frameBorder={0}
-              scrolling="no"
-              title="BeatStars Player"
-            />
+          <div className="rounded-xl border overflow-hidden p-0">
+            {beatstarsId ? (
+              <BeatStarsEmbed storeId={beatstarsId} />
+            ) : (
+              <div className="p-6 text-sm text-muted-foreground">
+                Connect your BeatStars store in Integrations.
+                <div className="mt-3">
+                  <button className="underline" onClick={() => window.dispatchEvent(new Event("open-integrations"))}>Open Integrations</button>
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
@@ -69,8 +75,16 @@ const Index = () => {
             <p className="text-muted-foreground text-sm">Gumroad and Shopify Buy Button are supported.</p>
           </header>
           <div className="space-y-3">
-            <a className="gumroad-button" href="https://gum.co/YOUR_PRODUCT" target="_blank" rel="noreferrer noopener">Buy on Gumroad</a>
-            <div id="product-component-XXXX" className="text-sm text-muted-foreground">Place your Shopify Buy Button here.</div>
+            {gumroadUrl ? (
+              <a className="gumroad-button" href={gumroadUrl} target="_blank" rel="noreferrer noopener">Buy on Gumroad</a>
+            ) : (
+              <div className="text-sm text-muted-foreground">Set your Gumroad product URL in Integrations.</div>
+            )}
+            {shopifyEmbed ? (
+              <div className="prose prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: shopifyEmbed }} />
+            ) : (
+              <div className="text-sm text-muted-foreground">Paste your Shopify Buy Button embed in Integrations.</div>
+            )}
           </div>
         </section>
       </main>

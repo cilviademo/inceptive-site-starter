@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
+import IntegrationSettings from "@/components/system/IntegrationSettings";
 const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   `story-link px-3 py-2 rounded-md transition-colors ${isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"}`;
 
@@ -29,6 +30,7 @@ export default function SiteHeader() {
           <Button variant="ghost" asChild>
             <Link to="/cart">Cart</Link>
           </Button>
+          <IntegrationSettings />
         </div>
       </div>
     </header>
